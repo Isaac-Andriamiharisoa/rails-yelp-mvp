@@ -1,0 +1,22 @@
+<h1>Hello</h1>
+<ul class="list-group w-50">
+    <% @restaurants.each do |restaurant| %>
+        <li class="list-group-item my-2 shadow-sm">
+            <h4>
+                <%= restaurant.name %>
+            </h4>
+            <% restaurant.reviews.each do |review| %>
+                <div class="container d-flex justify-content-between shadow-sm p-3 my-3">
+                    <%= review[:content] %>
+                    <div>
+                    <% review[:rating].times do |thing| %>
+                        <i class="fa-solid fa-star" style="color: #ffec00;"></i>
+                    <% end %>
+                    </div>
+                </div>
+            <% end %>
+            <%= link_to "Show this restaurant", restaurant %>
+        </li>
+    <% end %>
+    <%= link_to 'Add new restaurant', new_restaurant_path, :class=>'btn btn-primary w-25' %>
+</ul>

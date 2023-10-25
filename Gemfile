@@ -30,6 +30,9 @@ gem "jbuilder"
 # For simple forms
 gem "simple_form"
 
+# For erb lint
+gem "erb_lint"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
